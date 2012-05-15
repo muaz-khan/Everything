@@ -1,0 +1,57 @@
+﻿<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+<!-- Muaz Khan (@muazkh) - Web Developer from Pakistan! -->
+<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
+
+	<title>Bezier Curves and Coloring → Part 6 ® Muaz Khan</title>    
+	<meta name="description" content="Bezier Curves and Coloring → Part 6 ® Muaz Khan - HTML5 Canvas 2D API relevant tools, experiments, tips & tricks from Muaz Khan. Muaz Khan is a web-developer from Pakistan!">
+	<meta name="author" content="Muaz Khan"><link rel="author" type="text/html" href="https://plus.google.com/100325991024054712503">
+	<link href="../../../../Style.css" rel="stylesheet">
+	<style>
+		::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+	</style>
+</head>
+	<body itemscope itemtype="http://schema.org/WebPage">
+		<h1>Bezier Curves and Coloring → Part 6</h1>
+		<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+		<section>
+			<canvas id="canvas"></canvas>
+		</section>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+		<div class="view-buttons">
+			<a href="../Part-1/" title="Bezier Curves and Coloring - Part 1">1</a> 
+			– <a href="../Part-2/" title="Bezier Curves and Coloring - Part 2">2</a> 
+			– <a href="../Part-3/" title="Bezier Curves and Coloring - Part 3">3</a> 
+			– <a href="../Part-4/" title="Bezier Curves and Coloring - Part 4">4</a> 
+			– <a href="../Part-5/" title="Bezier Curves and Coloring - Part 5">5</a> 
+			– <a href="../Part-6/" title="Bezier Curves and Coloring - Part 6">6</a> 
+			– <a href="../Part-7/" title="Bezier Curves and Coloring - Part 7">7</a> 
+			– <a href="../Part-8/" title="Bezier Curves and Coloring - Part 8">8</a> 			
+		</div>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	<div class="footer" itemprop="breadcrumb">
+		© 2012 <a href="https://plus.google.com/100325991024054712503" rel="author" title="Muaz Khan's Google+ profile">Muaz Khan</a>
+		(<a href="http://twitter.com/muazkh" title="@muazkh">@muazkh</a> | <a href="mailto:muazkh@gmail.com" title="muazkh@gmail.com">Email</a>) 		
+		® <a href="../../../">Home</a> » <a href="../../">Experiments</a> » <a href="../">Bezier Curves and Coloring</a>
+	</div>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	    <script>
+    	    if(!innerWidth) var innerWidth = document.body.clientWidth;
+          if(!innerHeight) var innerHeight = document.body.clientHeight;		
+          innerHeight = innerHeight - (innerHeight / 3);
+          
+    	    document.createElement("canvas").getContext?(function(){function a(){s.closePath(),s.fillStyle="rgba("+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", .3)",s.fill(),s.beginPath()}function l(){var v;c+=5,h===1&&(t+=5,o+=5,n+=5,u+=5,c>20&&(h=2)),h===2&&(t-=5,o-=5,n-=5,u-=5,c>40&&(h=3)),h===3&&(f+=5,r+=5,i+=5,e+=5,c>60&&(h=4)),h===4&&(f-=5,r-=5,i-=5,e-=5,c>80&&(c=0,h=1)),s.clearRect(0,0,5e4,5e4);var p=[[t,n],[t+9,n+16],[t+94,n+115],[t+9,n+16],[t+125,n+1],[t+134,n+17],[t+219,n+116],[t+134,n+17],[t+264,n+2],[t+273,n+18],[t+358,n+117],[t+273,n+18],[t+389,n+3],[t+398,n+19],[t+483,n+118],[t+398,n+19],[t-8,n+170],[t+1,n+186],[t+86,n+285],[t+1,n+186],[t+117,n+171],[t+126,n+187],[t+211,n+286],[t+126,n+187],[t+256,n+172],[t+265,n+188],[t+350,n+287],[t+265,n+188],[t+381,n+173],[t+390,n+189],[t+475,n+288],[t+390,n+189],[t+524,n],[t+533,n+16],[t+618,n+115],[t+533,n+16],[t+649,n+1],[t+658,n+17],[t+743,n+116],[t+658,n+17],[t+788,n+2],[t+797,n+18],[t+882,n+117],[t+797,n+18],[t+913,n+3],[t+922,n+19],[t+1007,n+118],[t+922,n+19],[t+516,n+170],[t+525,n+186],[t+610,n+285],[t+525,n+186],[t+641,n+171],[t+650,n+187],[t+735,n+286],[t+650,n+187],[t+780,n+172],[t+789,n+188],[t+874,n+287],[t+789,n+188],[t+905,n+173],[t+914,n+189],[t+999,n+288],[t+914,n+189],[t+25,n+334],[t+34,n+350],[t+119,n+449],[t+34,n+350],[t+150,n+335],[t+159,n+351],[t+244,n+450],[t+159,n+351],[t+289,n+336],[t+298,n+352],[t+383,n+451],[t+298,n+352],[t+414,n+337],[t+423,n+353],[t+508,n+452],[t+423,n+353],[t+17,n+504],[t+26,n+520],[t+111,n+619],[t+26,n+520],[t+142,n+505],[t+151,n+521],[t+236,n+620],[t+151,n+521],[t+281,n+506],[t+290,n+522],[t+375,n+621],[t+290,n+522],[t+406,n+507],[t+415,n+523],[t+500,n+622],[t+415,n+523],[t+549,n+334],[t+558,n+350],[t+643,n+449],[t+558,n+350],[t+674,n+335],[t+683,n+351],[t+768,n+450],[t+683,n+351],[t+813,n+336],[t+822,n+352],[t+907,n+451],[t+822,n+352],[t+938,n+337],[t+947,n+353],[t+1032,n+452],[t+947,n+353],[t+541,n+504],[t+550,n+520],[t+635,n+619],[t+550,n+520],[t+666,n+505],[t+675,n+521],[t+760,n+620],[t+675,n+521],[t+805,n+506],[t+814,n+522],[t+899,n+621],[t+814,n+522],[t+930,n+507],[t+939,n+523],[t+1024,n+622],[t+939,n+523]],y=[[f,i,r,e,o,u],[f+2,i+27,r-18,e-9,o-13,u-10],[f+176,i+181,r-232,e+39,o-11,u-10],[f+131,i+128,r-232,e+39,o-92,u-116],[f+125,i+1,r+125,e+1,o+125,u+1],[f+127,i+28,r+107,e-8,o+112,u-9],[f+301,i+182,r-107,e+40,o+114,u-9],[f+256,i+129,r-107,e+40,o+33,u-115],[f+264,i+2,r+264,e+2,o+264,u+2],[f+266,i+29,r+246,e-7,o+251,u-8],[f+440,i+183,r+32,e+41,o+253,u-8],[f+395,i+130,r+32,e+41,o+172,u-114],[f+389,i+3,r+389,e+3,o+389,u+3],[f+391,i+30,r+371,e-6,o+376,u-7],[f+565,i+184,r+157,e+42,o+378,u-7],[f+520,i+131,r+157,e+42,o+297,u-113],[f-8,i+170,r-8,e+170,o-8,u+170],[f-6,i+197,r-26,e+161,o-21,u+160],[f+168,i+351,r-240,e+209,o-19,u+160],[f+123,i+298,r-240,e+209,o-100,u+54],[f+117,i+171,r+117,e+171,o+117,u+171],[f+119,i+198,r+99,e+162,o+104,u+161],[f+293,i+352,r-115,e+210,o+106,u+161],[f+248,i+299,r-115,e+210,o+25,u+55],[f+256,i+172,r+256,e+172,o+256,u+172],[f+258,i+199,r+238,e+163,o+243,u+162],[f+432,i+353,r+24,e+211,o+245,u+162],[f+387,i+300,r+24,e+211,o+164,u+56],[f+381,i+173,r+381,e+173,o+381,u+173],[f+383,i+200,r+363,e+164,o+368,u+163],[f+557,i+354,r+149,e+212,o+370,u+163],[f+512,i+301,r+149,e+212,o+289,u+57],[f+524,i,r+524,e,o+524,u],[f+526,i+27,r+506,e-9,o+511,u-10],[f+700,i+181,r+292,e+39,o+513,u-10],[f+655,i+128,r+292,e+39,o+432,u-116],[f+649,i+1,r+649,e+1,o+649,u+1],[f+651,i+28,r+631,e-8,o+636,u-9],[f+825,i+182,r+417,e+40,o+638,u-9],[f+780,i+129,r+417,e+40,o+557,u-115],[f+788,i+2,r+788,e+2,o+788,u+2],[f+790,i+29,r+770,e-7,o+775,u-8],[f+964,i+183,r+556,e+41,o+777,u-8],[f+919,i+130,r+556,e+41,o+696,u-114],[f+913,i+3,r+913,e+3,o+913,u+3],[f+915,i+30,r+895,e-6,o+900,u-7],[f+1089,i+184,r+681,e+42,o+902,u-7],[f+1044,i+131,r+681,e+42,o+821,u-113],[f+516,i+170,r+516,e+170,o+516,u+170],[f+518,i+197,r+498,e+161,o+503,u+160],[f+692,i+351,r+284,e+209,o+505,u+160],[f+647,i+298,r+284,e+209,o+424,u+54],[f+641,i+171,r+641,e+171,o+641,u+171],[f+643,i+198,r+623,e+162,o+628,u+161],[f+817,i+352,r+409,e+210,o+630,u+161],[f+772,i+299,r+409,e+210,o+549,u+55],[f+780,i+172,r+780,e+172,o+780,u+172],[f+782,i+199,r+762,e+163,o+767,u+162],[f+956,i+353,r+548,e+211,o+769,u+162],[f+911,i+300,r+548,e+211,o+688,u+56],[f+905,i+173,r+905,e+173,o+905,u+173],[f+907,i+200,r+887,e+164,o+892,u+163],[f+1081,i+354,r+673,e+212,o+894,u+163],[f+1036,i+301,r+673,e+212,o+813,u+57],[f+25,i+334,r+25,e+334,o+25,u+334],[f+27,i+361,r+7,e+325,o+12,u+324],[f+201,i+515,r-207,e+373,o+14,u+324],[f+156,i+462,r-207,e+373,o-67,u+218],[f+150,i+335,r+150,e+335,o+150,u+335],[f+152,i+362,r+132,e+326,o+137,u+325],[f+326,i+516,r-82,e+374,o+139,u+325],[f+281,i+463,r-82,e+374,o+58,u+219],[f+289,i+336,r+289,e+336,o+289,u+336],[f+291,i+363,r+271,e+327,o+276,u+326],[f+465,i+517,r+57,e+375,o+278,u+326],[f+420,i+464,r+57,e+375,o+197,u+220],[f+414,i+337,r+414,e+337,o+414,u+337],[f+416,i+364,r+396,e+328,o+401,u+327],[f+590,i+518,r+182,e+376,o+403,u+327],[f+545,i+465,r+182,e+376,o+322,u+221],[f+17,i+504,r+17,e+504,o+17,u+504],[f+19,i+531,r-1,e+495,o+4,u+494],[f+193,i+685,r-215,e+543,o+6,u+494],[f+148,i+632,r-215,e+543,o-75,u+388],[f+142,i+505,r+142,e+505,o+142,u+505],[f+144,i+532,r+124,e+496,o+129,u+495],[f+318,i+686,r-90,e+544,o+131,u+495],[f+273,i+633,r-90,e+544,o+50,u+389],[f+281,i+506,r+281,e+506,o+281,u+506],[f+283,i+533,r+263,e+497,o+268,u+496],[f+457,i+687,r+49,e+545,o+270,u+496],[f+412,i+634,r+49,e+545,o+189,u+390],[f+406,i+507,r+406,e+507,o+406,u+507],[f+408,i+534,r+388,e+498,o+393,u+497],[f+582,i+688,r+174,e+546,o+395,u+497],[f+537,i+635,r+174,e+546,o+314,u+391],[f+549,i+334,r+549,e+334,o+549,u+334],[f+551,i+361,r+531,e+325,o+536,u+324],[f+725,i+515,r+317,e+373,o+538,u+324],[f+680,i+462,r+317,e+373,o+457,u+218],[f+674,i+335,r+674,e+335,o+674,u+335],[f+676,i+362,r+656,e+326,o+661,u+325],[f+850,i+516,r+442,e+374,o+663,u+325],[f+805,i+463,r+442,e+374,o+582,u+219],[f+813,i+336,r+813,e+336,o+813,u+336],[f+815,i+363,r+795,e+327,o+800,u+326],[f+989,i+517,r+581,e+375,o+802,u+326],[f+944,i+464,r+581,e+375,o+721,u+220],[f+938,i+337,r+938,e+337,o+938,u+337],[f+940,i+364,r+920,e+328,o+925,u+327],[f+1114,i+518,r+706,e+376,o+927,u+327],[f+1069,i+465,r+706,e+376,o+846,u+221],[f+541,i+504,r+541,e+504,o+541,u+504],[f+543,i+531,r+523,e+495,o+528,u+494],[f+717,i+685,r+309,e+543,o+530,u+494],[f+672,i+632,r+309,e+543,o+449,u+388],[f+666,i+505,r+666,e+505,o+666,u+505],[f+668,i+532,r+648,e+496,o+653,u+495],[f+842,i+686,r+434,e+544,o+655,u+495],[f+797,i+633,r+434,e+544,o+574,u+389],[f+805,i+506,r+805,e+506,o+805,u+506],[f+807,i+533,r+787,e+497,o+792,u+496],[f+981,i+687,r+573,e+545,o+794,u+496],[f+936,i+634,r+573,e+545,o+713,u+390],[f+930,i+507,r+930,e+507,o+930,u+507],[f+932,i+534,r+912,e+498,o+917,u+497],[f+1106,i+688,r+698,e+546,o+919,u+497],[f+1061,i+635,r+698,e+546,o+838,u+391]],w=128;for(v=0;v<w;v++)s.moveTo(p[v][0],p[v][1]),s.bezierCurveTo(y[v][0],y[v][1],y[v][2],y[v][3],y[v][4],y[v][5]);a(),oninterval(l)}var s;window.oninterval=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}(),s=document.getElementById("canvas").getContext("2d"),s.canvas.width=innerWidth,s.canvas.height=innerHeight,s.lineWidth=2;var c=0,h=1,t=-8,n=20,f=27,i=-10,r=126,e=135,o=86,u=135;l()})():(alert("Your browser is not supporting HTML5 Canvas APIs!"))
+    	</script>
+	
+	<script src="../../../../JavaScript.js"></script>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+</body>
+</html>

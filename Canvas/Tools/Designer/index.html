@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
+
+	<title>Canvas Designer ® Muaz Khan</title>    
+	<meta name="description" content="HTML5 Canvas Designer ® Muaz Khan – A tool aimed to give you a full-fledged drawing surface and also auto generate appropriate code for you in different formats!">
+
+	<meta name="author" content="Muaz Khan">
+	<link rel="author" type="text/html" href="https://plus.google.com/100325991024054712503">
+
+	<style>::-webkit-scrollbar{width:0;height:0}textarea::-webkit-scrollbar{width:10px;background-color:transparent}textarea::-webkit-scrollbar-button{height:0;width:0}textarea::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,.2);border-radius:60% 0 0 60%}textarea::-webkit-scrollbar-track{background-color:transparent;box-shadow:inset 1px 0 0 rgba(0,0,0,.1);border-radius:100%}::selection,::-moz-selection{background:#00a2e8;color:#fff;text-shadow:none}html,body,footer,input,textarea,h1,h2{margin:0;padding:0;word-wrap:break-word;-o-text-overflow:ellipsis;-ms-text-overflow:ellipsis;text-overflow:ellipsis;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:Verdana,arial,helvetica,sans-serif}html,body{background-color:#fbfbfb;font-size:13px;height:100%;cursor:default}footer{border-top:1px solid #e5e5e5;text-align:center}h1{border-bottom:1px solid #e5e5e5;text-align:center;text-shadow:1px 1px #e5e5e5,2px 2px white,3px 3px #e5e5e5;color:#6c96c8;font-size:400%;font-weight:normal;padding-bottom:10px;overflow:hidden;height:62px}h1,.line-width-done,.colors-done,.additional-close{background:-moz-linear-gradient(top,rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,1)),color-stop(97%,rgba(243,243,243,1)),color-stop(97%,rgba(237,237,237,1)),color-stop(100%,rgba(255,255,255,1)));background:-webkit-linear-gradient(top,rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%);background:-o-linear-gradient(top,rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%);background:-ms-linear-gradient(top,rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%);background:linear-gradient(top,rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0)}a{color:#0b7aff;text-decoration:none}a:hover{color:#043877}.design-surface{background-color:#fff}.design-surface canvas{position:absolute}.design-surface canvas:last-child{position:static}.tool-box{border-right:1px solid #e5e5e5;position:absolute;top:73px;width:40px;background-color:#fbfbfb;overflow:hidden}.tool-box canvas{border-bottom:1px solid #e5e5e5;border-radius:2px;margin-top:-4px}.tool-box canvas:first-child,.tool-box canvas:first-child:hover{margin-top:0;border-top:0}.selected-shape,.tool-box canvas:hover{box-shadow:inset 0 0 10px rgba(0,0,0,.1)}.preview-panel{position:absolute;right:10px;background-color:#fbfbfb}.preview-panel div{border:1px solid #e5e5e5;border-top:0;display:inline-block;padding:5px 10px}.preview-panel #code-preview{margin-left:-6px}.preview-panel div{border:1px solid #e5e5e5;border-top-color:#fff}.preview-panel div:not(.preview-selected){border-top:1px solid #e5e5e5}.preview-selected{margin-top:-4px;background-color:#fff}input,select{-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;border:1px solid #d9d9d9;-webkit-user-select:initial;-moz-user-select:initial;-ms-user-select:initial;user-select:initial;outline:none}input:focus{border:1px solid #043877}.allow-select{-webkit-user-select:initial;-moz-user-select:initial;user-select:initial}.arc-range-container{position:absolute;z-index:1000;display:none}.arc-range{font-size:18px;padding:2px 16px;text-align:center;width:40px}.arc-range-container-guide{margin-top:10px;color:#c5c5c5}.code-container{position:absolute;top:72px;width:100%;display:none}.code-text{resize:none;width:99%;height:300px;padding:15px;outline:0;border:0;border-top:1px solid #e5e5e5;font-family:Consolas,"Andale Mono","Lucida Console","Courier New",monospace;color:#666}.options-container{position:absolute;top:72px;left:0;border:1px solid #e5e5e5;border-left:0;background-color:#fbfbfb;display:none}.options-container div{border-bottom:1px solid #e5e5e5;padding:5px}.options-container div:last-child{border-bottom:0}.context-popup{position:absolute;display:none;padding:5px;border:1px solid #e5e5e5;border-left:0;background-color:#fbfbfb;box-shadow:inset 0 0 14px #e5e5e5}.line-width-text,.colors-container input{width:25px;padding:2px 5px;text-align:center}.done{border:1px solid #e5e5e5;display:inline-block;padding:4px 10px;border-radius:3px}.done:hover{box-shadow:inset 0 0 12px white}.done:active{box-shadow:inset 0 0 52px white}.colors-container label{width:100px;display:inline-block}.colors-container input{width:100px;text-align:left}.colors-container .input-div{margin-bottom:5px}.additional-container label,.additional-container select{width:200px;display:inline-block}.additional-container select{width:120px}</style>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+	<h1>Canvas Designer ® Muaz Khan</h1>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<section class="design-surface">
+		<canvas id="temp-canvas"></canvas>
+		<canvas id="main-canvas"></canvas>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<section id="tool-box" class="tool-box">
+		<canvas id="drag-last-path" width="40" height="40"></canvas>
+		<canvas id="drag-all-paths" width="40" height="40"></canvas>
+
+		<canvas id="line" class="selected-shape" width="40" height="40"></canvas>
+		<canvas id="arc" width="40" height="40"></canvas>
+		<canvas id="rectangle" width="40" height="40"></canvas>
+		<canvas id="quadratic-curve" width="40" height="40"></canvas>
+		<canvas id="bezier-curve" width="40" height="40"></canvas>
+
+		<canvas id="line-width" width="40" height="40"></canvas>
+		<canvas id="colors" width="40" height="40"></canvas>
+		<canvas id="additional" width="40" height="40"></canvas>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<section id="arc-range-container" class="arc-range-container">
+		<input id="arc-range" class="arc-range" type="text" value="2">
+		<input type="checkbox" id="is-clockwise" checked="" class="allow-select">
+		<label for="is-clockwise">Clockwise?</label>
+		<div class="arc-range-container-guide">Use arrow keys ↑↓</div>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<section class="code-container">
+		<textarea id="code-text" class="code-text allow-select"></textarea>
+	</section>
+	
+	<section class="preview-panel">
+		<div id="design-preview" class="preview-selected">Preview</div>
+		<div id="code-preview">Code</div>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	
+	<section id="options-container" class="options-container">
+		<div>
+			<input type="checkbox" id="is-absolute-points" checked="">
+			<label for="is-absolute-points">Absolute Points</label>
+		</div>
+		<div>
+			<input type="checkbox" id="is-shorten-code" checked="">
+			<label for="is-shorten-code">Shorten Code</label>
+		</div>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<section id="line-width-container" class="context-popup">
+		<label for="line-width-text">Line Width:</label>
+		<input id="line-width-text" class="line-width-text" type="text" value="2">
+		
+		<div id="line-width-done" class="done">Done</div>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	
+	<section id="colors-container" class="context-popup colors-container">
+		<div class="input-div">
+			<label for="stroke-style">Stroke Style:</label>
+			<input id="stroke-style" type="color" value="#6c96c8">
+		</div>
+		
+		<div class="input-div">
+			<label for="fill-style">Fill Style:</label>
+			<input id="fill-style" type="color" value="transparent">
+		</div>
+		
+		<div id="colors-done" class="done">Done</div>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<section id="copy-container" class="context-popup">
+		<div>
+			<input type="checkbox" id="copy-last" checked=""/>
+			<label for="copy-last">Copy last path</label>
+		</div>
+		<div style="margin-top: 5px;">
+			<input type="checkbox" id="copy-all"/>
+			<label for="copy-all">Copy all paths</label>
+		</div>
+	</section>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	
+	<section id="additional-container" class="context-popup additional-container">
+		<div>
+			<label for="lineCap-select">Line Cap:</label>
+			<select id="lineCap-select">
+				<option>butt</option>
+				<option>round</option>
+				<option>square</option>
+			</select>
+		</div>
+		
+		<div>
+			<label for="lineJoin-select">Line Join:</label>
+			<select id="lineJoin-select">
+				<option>bevel</option>
+				<option>round</option>
+				<option>miter</option>
+			</select>
+		</div>
+		
+		<div>
+			<label for="globalAlpha-select">globalAlpha:</label>
+			<select id="globalAlpha-select">
+				<option>1.0</option>
+				<option>0.9</option>
+				<option>0.8</option>
+				<option>0.7</option>
+				<option>0.6</option>
+				<option>0.5</option>
+				<option>0.4</option>
+				<option>0.3</option>
+				<option>0.2</option>
+				<option>0.1</option>
+				<option>0.0</option>
+			</select>
+		</div>
+		
+		<div>
+			<label for="globalCompositeOperation-select">globalCompositeOperation:</label>
+			<select id="globalCompositeOperation-select">
+				<option>source-atop</option>
+				<option>source-in</option>
+				<option>source-out</option>
+				<option selected="">source-over</option>
+				<option>destination-atop</option>
+				<option>destination-in</option>
+				<option>destination-out</option>
+				<option>destination-over</option>
+				<option>lighter</option>
+				<option>copy</option>
+				<option>xor</option>
+			</select>
+		</div>
+		
+		<div id="additional-close" class="done">Done</div>
+	</section>
+
+    <!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+    <footer itemprop="breadcrumb">
+		<a href="http://twitter.com/muazkh" title="@muazkh">©</a> <a href="https://plus.google.com/100325991024054712503" rel="author" title="Muaz Khan's Google+ profile">Muaz Khan</a>
+		(<a href="mailto:muazkh@gmail.com" title="muazkh@gmail.com">Email</a>) ® <a href="../../" title="HTML5 Canvas 2D Context | Home">Home</a> » <a href="../" title="List of all tools">Tools</a> » <a href="../Designer/" title="HTML5 Canvas Designer/Tool">Canvas Designer</a> » <a href="../Designer/Help/" title="Relevant stuff!">Help!</a>
+	</footer>
+	
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+
+	<script>
+function addEvent(n,t,i){return n.addEventListener?(n.addEventListener(t,i,!1),!0):n.attachEvent?n.attachEvent("on"+t,i):(n["on"+t]=i,this)}function find(n){return document.getElementById(n)}function getContext(n){var i=find(n),t=i.getContext("2d");return i.setAttribute("width",innerWidth),i.setAttribute("height",innerHeight-i.offsetTop-80),t.lineWidth=lineWidth,t.strokeStyle=strokeStyle,t.fillStyle=fillStyle,t}function endLastPath(){var n=is;n.isArc?arcHandler.end():n.isQuadraticCurve?quadraticHandler.end():n.isBezierCurve&&bezierHandler.end(),drawHelper.redraw()}function copy(){endLastPath(),dragHelper.global.startingIndex=0,find("copy-last").checked?(copiedStuff=points[points.length-1],setSelection(find("drag-last-path"),"DragLastPath")):(copiedStuff=points,setSelection(find("drag-all-paths"),"DragAllPaths"))}function paste(){endLastPath(),dragHelper.global.startingIndex=0,find("copy-last").checked?(points[points.length]=copiedStuff,dragHelper.global={prevX:0,prevY:0,startingIndex:points.length-1},dragHelper.dragAllPaths(0,0),setSelection(find("drag-last-path"),"DragLastPath")):(dragHelper.global.startingIndex=points.length,points=points.concat(copiedStuff),setSelection(find("drag-all-paths"),"DragAllPaths"))}var is={isLine:!1,isArc:!1,isDragLastPath:!1,isDragAllPaths:!1,isRectangle:!1,isQuadraticCurve:!1,isBezierCurve:!1,set:function(n){var t=this;t.isLine=t.isArc=t.isDragLastPath=t.isDragAllPaths=t.isRectangle=t.isQuadraticCurve=t.isBezierCurve=!1,t["is"+n]=!0}},points=[],textarea=find("code-text"),lineWidth=2,strokeStyle="#6c96c8",fillStyle="transparent",globalAlpha=1,globalCompositeOperation="source-over",lineCap="butt",lineJoin="miter",context=getContext("main-canvas"),tempContext=getContext("temp-canvas"),common={updateTextArea:function(){var n=common,r=n.toFixed,u=n.getPoint,t=find("is-absolute-points").checked,i=find("is-shorten-code").checked;t&&i&&n.absoluteShortened(),t&&!i&&n.absoluteNOTShortened(r),!t&&i&&n.relativeShortened(r,u),t||i||n.relativeNOTShortened(r,u)},toFixed:function(n){return Number(n).toFixed(1)},getPoint:function(n,t,i){return n=n>t?i+" + "+(n-t):n<t?i+" - "+(t-n):i},absoluteShortened:function(){var n="",r=points.length,t=0,i;for(t;t<r;t++)i=points[t],n+=this.shortenHelper(i[0],i[1],i[2]);n=n.substr(0,n.length-2),textarea.value="var points = ["+n+"], length = points.length, point, p, i = 0;\n\n"+this.forLoop,this.prevProps=null},absoluteNOTShortened:function(n){for(var u=[],t,i,r=0;r<points.length;r++)i=points[r],t=i[1],i[0]==="line"&&(u[r]=["context.beginPath();\ncontext.moveTo("+t[0]+", "+t[1]+");\ncontext.lineTo("+t[2]+", "+t[3]+");\n"+this.strokeOrFill(i[2])]),i[0]==="arc"&&(u[r]=["context.beginPath(); \ncontext.arc("+n(t[0])+","+n(t[1])+","+n(t[2])+","+n(t[3])+", 0,"+t[4]+"); \n"+this.strokeOrFill(i[2])]),i[0]==="rect"&&(u[r]=[this.strokeOrFill(i[2])+"\ncontext.strokeRect("+t[0]+", "+t[1]+","+t[2]+","+t[3]+");\ncontext.fillRect("+t[0]+", "+t[1]+","+t[2]+","+t[3]+");"]),i[0]==="quadratic"&&(u[r]=["context.beginPath();\ncontext.moveTo("+t[0]+", "+t[1]+");\ncontext.quadraticCurveTo("+t[2]+", "+t[3]+", "+t[4]+", "+t[5]+");\n"+this.strokeOrFill(i[2])]),i[0]==="bezier"&&(u[r]=["context.beginPath();\ncontext.moveTo("+t[0]+", "+t[1]+");\ncontext.bezierCurveTo("+t[2]+", "+t[3]+", "+t[4]+", "+t[5]+", "+t[6]+", "+t[7]+");\n"+this.strokeOrFill(i[2])]);textarea.value=u.join("\n\n")+this.strokeFillText,this.prevProps=null},relativeShortened:function(n,t){var o=0,i,r,s=points.length,e="",u=0,f=0;for(o;o<s;o++)r=points[o],i=r[1],o===0&&(u=i[0],f=i[1]),r[0]==="line"&&(e+=this.shortenHelper(r[0],[t(i[0],u,"x"),t(i[1],f,"y"),t(i[2],u,"x"),t(i[3],f,"y")],r[2])),r[0]==="arc"&&(e+=this.shortenHelper(r[0],[t(i[0],u,"x"),t(i[1],f,"y"),i[2],i[3],i[4]],r[2])),r[0]==="rect"&&(e+=this.shortenHelper(r[0],[t(i[0],u,"x"),t(i[1],f,"y"),t(i[2],u,"x"),t(i[3],f,"y")],r[2])),r[0]==="quadratic"&&(e+=this.shortenHelper(r[0],[t(i[0],u,"x"),t(i[1],f,"y"),t(i[2],u,"x"),t(i[3],f,"y"),t(i[4],u,"x"),t(i[5],f,"y")],r[2])),r[0]==="bezier"&&(e+=this.shortenHelper(r[0],[t(i[0],u,"x"),t(i[1],f,"y"),t(i[2],u,"x"),t(i[3],f,"y"),t(i[4],u,"x"),t(i[5],f,"y"),t(i[6],u,"x"),t(i[7],f,"y")],r[2]));e=e.substr(0,e.length-2),textarea.value="var x = "+u+", y = "+f+", points = ["+e+"], length = points.length, point, p, i = 0;\n\n"+this.forLoop,this.prevProps=null},relativeNOTShortened:function(n,t){for(var i,f,s=points.length,e="",r=0,u=0,o=0;o<s;o++)f=points[o],i=f[1],o===0&&(r=i[0],u=i[1],e="var x = "+r+", y = "+u+";\n\n"),f[0]==="arc"&&(e+="context.beginPath();\ncontext.arc("+t(i[0],r,"x")+", "+t(i[1],u,"y")+", "+i[2]+", "+i[3]+", 0, "+i[4]+");\n"+this.strokeOrFill(f[2])),f[0]==="line"&&(e+="context.beginPath();\ncontext.moveTo("+t(i[0],r,"x")+", "+t(i[1],u,"y")+");\ncontext.lineTo("+t(i[2],r,"x")+", "+t(i[3],u,"y")+");\n"+this.strokeOrFill(f[2])),f[0]==="rect"&&(e+=this.strokeOrFill(f[2])+"\ncontext.strokeRect("+t(i[0],r,"x")+", "+t(i[1],u,"y")+", "+t(i[2],r,"x")+", "+t(i[3],u,"y")+");\ncontext.fillRect("+t(i[0],r,"x")+", "+t(i[1],u,"y")+", "+t(i[2],r,"x")+", "+t(i[3],u,"y")+");"),f[0]==="quadratic"&&(e+="context.beginPath();\ncontext.moveTo("+t(i[0],r,"x")+", "+t(i[1],u,"y")+");\ncontext.quadraticCurveTo("+t(i[2],r,"x")+", "+t(i[3],u,"y")+", "+t(i[4],r,"x")+", "+t(i[5],u,"y")+");\n"+this.strokeOrFill(f[2])),f[0]==="bezier"&&(e+="context.beginPath();\ncontext.moveTo("+t(i[0],r,"x")+", "+t(i[1],u,"y")+");\ncontext.bezierCurveTo("+t(i[2],r,"x")+", "+t(i[3],u,"y")+", "+t(i[4],r,"x")+", "+t(i[5],u,"y")+", "+t(i[6],r,"x")+", "+t(i[7],u,"y")+");\n"+this.strokeOrFill(f[2])),o!==s-1&&(e+="\n\n");textarea.value=e+this.strokeFillText,this.prevProps=null},forLoop:'for(i; i < length; i++) {\n\t p = points[i];\n\t point = p[1];\n\t context.beginPath();\n\n\t if(p[2]) { \n\t\t context.lineWidth = p[2][0];\n\t\t context.strokeStyle = p[2][1];\n\t\t context.fillStyle = p[2][2];\n\t\t context.globalAlpha = p[2][3];\n\t\t context.globalCompositeOperation = p[2][4];\n\t\t context.lineCap = p[2][5];\n\t\t context.lineJoin = p[2][6];\n\t }\n\n\t if(p[0] === "line") { \n\t\t context.moveTo(point[0], point[1]);\n\t\t context.lineTo(point[2], point[3]);\n\t }\n\n\t if(p[0] === "arc") context.arc(point[0], point[1], point[2], point[3], 0, point[4]); \n\n\t if(p[0] === "rect") {\n\t\t context.strokeRect(point[0], point[1], point[2], point[3]);\n\t\t context.fillRect(point[0], point[1], point[2], point[3]);\n\t }\n\n\t if(p[0] === "quadratic") {\n\t\t context.moveTo(point[0], point[1]);\n\t\t context.quadraticCurveTo(point[2], point[3], point[4], point[5]);\n\t }\n\n\t if(p[0] === "bezier") {\n\t\t context.moveTo(point[0], point[1]);\n\t\t context.bezierCurveTo(point[2], point[3], point[4], point[5], point[6], point[7]);\n\t }\n\n\t context.stroke();\n\t context.fill();\n}',strokeFillText:"\n\nfunction strokeOrFill(lineWidth, strokeStyle, fillStyle, globalAlpha, globalCompositeOperation, lineCap, lineJoin) { \n\t if(lineWidth) { \n\t\t context.globalAlpha = globalAlpha;\n\t\t context.globalCompositeOperation = globalCompositeOperation;\n\t\t context.lineCap = lineCap;\n\t\t context.lineJoin = lineJoin;\n\t\t context.lineWidth = lineWidth;\n\t\t context.strokeStyle = strokeStyle;\n\t\t context.fillStyle = fillStyle;\n\t } \n\n\t context.stroke();\n\t context.fill();\n}",strokeOrFill:function(n){return!this.prevProps||this.prevProps!==n.join(",")?(this.prevProps=n.join(","),'strokeOrFill("'+n.join('", "')+'");'):"strokeOrFill();"},prevProps:null,shortenHelper:function(n,t,i){var r='["'+n+'", ['+t.join(", ")+"]";return this.prevProps&&this.prevProps===i.join(",")||(this.prevProps=i.join(","),r+=', ["'+i.join('", "')+'"]'),r+"], "}},copiedStuff=[],isControlKeyPressed
+function setSelection(n,t){endLastPath(),hideContainers(),is.set(t);var i=document.getElementsByClassName("selected-shape")[0];i&&(i.className=i.className.replace(/selected-shape/g,"")),n.className+=" selected-shape"}function hideContainers(){var i=find("additional-container"),t=find("colors-container"),n=find("line-width-container");i.style.display=t.style.display=n.style.display="none"}(function(){function n(n){var t=find(n).getContext("2d");return t.lineWidth=2,t.strokeStyle="#6c96c8",t}function i(n,t){addEvent(n.canvas,"click",function(){dragHelper.global.startingIndex=0,setSelection(this,t),this.id==="drag-last-path"?(find("copy-last").checked=!0,find("copy-all").checked=!1):this.id==="drag-all-paths"&&(find("copy-all").checked=!0,find("copy-last").checked=!1)})}function l(){for(var u=n("drag-last-path"),r=10,t=6,e="line",s=[[e,r,t,r+5,t+27],[e,r,t,r+18,t+19],[e,r+17,t+19,r+9,t+20],[e,r+9,t+20,r+5,t+27],[e,r+16,t+22,r+16,t+31],[e,r+12,t+27,r+20,t+27]],h=s.length,f,o=0;o<h;o++)f=s[o],f[0]==="line"&&(u.beginPath(),u.moveTo(f[1],f[2]),u.lineTo(f[3],f[4]),u.closePath(),u.stroke());u.fillStyle="Gray",u.font="9px Verdana",u.fillText("Last",18,12),i(u,"DragLastPath")}function c(){for(var u=n("drag-all-paths"),r=10,t=6,e="line",s=[[e,r,t,r+5,t+27],[e,r,t,r+18,t+19],[e,r+17,t+19,r+9,t+20],[e,r+9,t+20,r+5,t+27],[e,r+16,t+22,r+16,t+31],[e,r+12,t+27,r+20,t+27]],h=s.length,f,o=0;o<h;o++)f=s[o],f[0]==="line"&&(u.beginPath(),u.moveTo(f[1],f[2]),u.lineTo(f[3],f[4]),u.closePath(),u.stroke());u.fillStyle="Gray",u.font="10px Verdana",u.fillText("All",20,12),i(u,"DragAllPaths")}function y(){var t=n("line");t.moveTo(0,0),t.lineTo(40,40),t.stroke(),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("Line",16,12),i(t,"Line"),is.set("Line")}function p(){var t=n("arc");t.arc(20,20,16.3,Math.PI*2,0,1),t.stroke(),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("Arc",10,24),i(t,"Arc")}function a(){var t=n("rectangle");t.strokeRect(5,5,30,30),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("Rect",8,24),i(t,"Rectangle")}function b(){var t=n("quadratic-curve");t.moveTo(0,0),t.quadraticCurveTo(50,10,30,40),t.stroke(),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("quad..",2,24),i(t,"QuadraticCurve")}function w(){var t=n("bezier-curve"),u=0,r=4;t.moveTo(u,r),t.bezierCurveTo(u+86,r+16,u-45,r+24,u+48,r+34),t.stroke(),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("Bezier",10,8),i(t,"BezierCurve")}function e(n,t,i,r,u,f){n.beginPath(),n.lineWidth=t,n.moveTo(i,r),n.lineTo(u,f),n.stroke()}function g(){var t=n("line-width");e(t,2,5,15,35,15),e(t,3,5,20,35,20),e(t,4,5,26,35,26),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("Line",8,12),t.fillText("Width",6,38);var r=find("line-width-container"),u=find("line-width-text"),f=find("line-width-done"),o=document.getElementsByTagName("h1")[0],i=t.canvas;addEvent(i,"click",function(){hideContainers(),r.style.display="block",r.style.top=i.offsetTop+o.clientHeight+1+"px",r.style.left=i.offsetLeft+i.clientWidth+"px",u.focus()}),addEvent(f,"click",function(){r.style.display="none",lineWidth=u.value})}function d(){var t=n("colors");t.fillStyle="red",t.fillRect(5,3,30,10),t.fillStyle="green",t.fillRect(5,15,30,10),t.fillStyle="blue",t.fillRect(5,27,30,10);var r=find("colors-container"),u=find("stroke-style"),f=find("fill-style"),o=find("colors-done"),e=document.getElementsByTagName("h1")[0],i=t.canvas;addEvent(i,"click",function(){hideContainers(),r.style.display="block",r.style.top=i.offsetTop+e.clientHeight+1+"px",r.style.left=i.offsetLeft+i.clientWidth+"px",u.focus()}),addEvent(o,"click",function(){r.style.display="none",strokeStyle=u.value,fillStyle=f.value})}function k(){var t=n("additional");t.fillStyle="#6c96c8",t.font="35px Verdana",t.fillText("\u00bb",10,27),t.fillStyle="Gray",t.font="9px Verdana",t.fillText("Extras!",2,38);var r=find("additional-container"),o=find("additional-close"),s=document.getElementsByTagName("h1")[0],i=t.canvas,h=find("globalAlpha-select"),u=find("globalCompositeOperation-select"),e=find("lineCap-select"),f=find("lineJoin-select");addEvent(i,"click",function(){hideContainers(),r.style.display="block",r.style.top=i.offsetTop+s.clientHeight+1+"px",r.style.left=i.offsetLeft+i.clientWidth+"px"}),addEvent(o,"click",function(){r.style.display="none",globalAlpha=h.value,globalCompositeOperation=u.value,lineCap=e.value,lineJoin=f.value})}function v(){t.style.width=innerWidth-r.clientWidth-30+"px",t.style.height=innerHeight-t.offsetTop-180+"px",t.style.marginLeft=r.clientWidth+"px",r.style.height=innerHeight-t.offsetTop-150+"px"}var s=find("tool-box"),u,f,t,r,o,h;s.style.height=innerHeight-s.offsetTop-77+"px",l(),c(),y(),p(),a(),b(),w(),g(),d(),k(),u=find("design-preview"),f=find("code-preview"),addEvent(u,"click",function(){f.className="",u.className="preview-selected",t.parentNode.style.display="none",r.style.display="none",hideContainers(),endLastPath()}),addEvent(f,"click",function(){u.className="",f.className="preview-selected",t.parentNode.style.display="block",r.style.display="block",t.focus(),common.updateTextArea(),v(),hideContainers(),endLastPath()}),t=find("code-text"),r=find("options-container"),o=find("is-absolute-points"),h=find("is-shorten-code"),addEvent(h,"change",common.updateTextArea),addEvent(o,"change",common.updateTextArea)})()
+var drawHelper={redraw:function(){tempContext.clearRect(0,0,innerWidth,innerHeight),context.clearRect(0,0,innerWidth,innerHeight);for(var n,i=points.length,t=0;t<i;t++)n=points[t],this[n[0]](context,n[1],n[2])},getOptions:function(){return[lineWidth,strokeStyle,fillStyle,globalAlpha,globalCompositeOperation,lineCap,lineJoin]},handleOptions:function(n,t){t=t||drawHelper.getOptions(),n.globalAlpha=t[3],n.globalCompositeOperation=t[4],n.lineCap=t[5],n.lineJoin=t[6],n.lineWidth=t[0],n.strokeStyle=t[1],n.stroke(),n.fillStyle=t[2],n.fill()},line:function(n,t,i){n.beginPath(),n.moveTo(t[0],t[1]),n.lineTo(t[2],t[3]),this.handleOptions(n,i)},arc:function(n,t,i){n.beginPath(),n.arc(t[0],t[1],t[2],t[3],0,t[4]),this.handleOptions(n,i)},rect:function(n,t,i){this.handleOptions(n,i),n.strokeRect(t[0],t[1],t[2],t[3]),n.fillRect(t[0],t[1],t[2],t[3])},quadratic:function(n,t,i){n.beginPath(),n.moveTo(t[0],t[1]),n.quadraticCurveTo(t[2],t[3],t[4],t[5]),this.handleOptions(n,i)},bezier:function(n,t,i){n.beginPath(),n.moveTo(t[0],t[1]),n.bezierCurveTo(t[2],t[3],t[4],t[5],t[6],t[7]),this.handleOptions(n,i)}}
+var dragHelper={global:{prevX:0,prevY:0,ismousedown:!1,pointsToMove:"all",startingIndex:0},mousedown:function(n){var e,t;isControlKeyPressed&&(copy(),paste(),isControlKeyPressed=!1);var f=dragHelper,i=f.global,r=n.pageX-canvas.offsetLeft,u=n.pageY-canvas.offsetTop;i.prevX=r,i.prevY=u,i.pointsToMove="all",points.length&&(e=points[points.length-1],t=e[1],e[0]==="line"&&(f.isPointInPath(r,u,t[0],t[1])&&(i.pointsToMove="head"),f.isPointInPath(r,u,t[2],t[3])&&(i.pointsToMove="tail")),e[0]==="rect"&&f.isPointInPath(r,u,t[0]+t[2],t[1]+t[3])&&(i.pointsToMove="stretch"),e[0]==="quadratic"&&(f.isPointInPath(r,u,t[0],t[1])&&(i.pointsToMove="starting-points"),f.isPointInPath(r,u,t[2],t[3])&&(i.pointsToMove="control-points"),f.isPointInPath(r,u,t[4],t[5])&&(i.pointsToMove="ending-points")),e[0]==="bezier"&&(f.isPointInPath(r,u,t[0],t[1])&&(i.pointsToMove="starting-points"),f.isPointInPath(r,u,t[2],t[3])&&(i.pointsToMove="1st-control-points"),f.isPointInPath(r,u,t[4],t[5])&&(i.pointsToMove="2nd-control-points"),f.isPointInPath(r,u,t[6],t[7])&&(i.pointsToMove="ending-points"))),i.ismousedown=!0},mouseup:function(){var n=this.global;is.isDragLastPath&&(tempContext.clearRect(0,0,innerWidth,innerHeight),context.clearRect(0,0,innerWidth,innerHeight),this.end()),n.ismousedown=!1},mousemove:function(n){var r=n.pageX-canvas.offsetLeft,i=n.pageY-canvas.offsetTop,t=this.global;drawHelper.redraw(),t.ismousedown&&this.dragShape(r,i),is.isDragLastPath&&this.init()},init:function(){if(!points.length)return;var t=points[points.length-1],n=t[1],i=this.global;tempContext.fillStyle=i.ismousedown?"rgba(255,85 ,154,.9)":"rgba(255,85 ,154,.4)",t[0]==="quadratic"&&(tempContext.beginPath(),tempContext.arc(n[0],n[1],10,Math.PI*2,0,!1),tempContext.arc(n[2],n[3],10,Math.PI*2,0,!1),tempContext.arc(n[4],n[5],10,Math.PI*2,0,!1),tempContext.fill()),t[0]==="bezier"&&(tempContext.beginPath(),tempContext.arc(n[0],n[1],10,Math.PI*2,0,!1),tempContext.arc(n[2],n[3],10,Math.PI*2,0,!1),tempContext.arc(n[4],n[5],10,Math.PI*2,0,!1),tempContext.arc(n[6],n[7],10,Math.PI*2,0,!1),tempContext.fill()),t[0]==="line"&&(tempContext.beginPath(),tempContext.arc(n[0],n[1],10,Math.PI*2,0,!1),tempContext.arc(n[2],n[3],10,Math.PI*2,0,!1),tempContext.fill()),t[0]==="rect"&&(tempContext.beginPath(),tempContext.arc(n[0]+n[2],n[1]+n[3],10,Math.PI*2,0,!1),tempContext.fill())},isPointInPath:function(n,t,i,r){return n>i-10&&n<i+10&&t>r-10&&t<r+10},getPoint:function(n,t,i){return n=n>t?i+(n-t):i-(t-n)},dragShape:function(n,t){if(!this.global.ismousedown)return;tempContext.clearRect(0,0,innerWidth,innerHeight),is.isDragLastPath&&this.dragLastPath(n,t),is.isDragAllPaths&&this.dragAllPaths(n,t);var i=this.global;i.prevX=n,i.prevY=t},end:function(){if(!points.length)return;tempContext.clearRect(0,0,innerWidth,innerHeight);var n=points[points.length-1];drawHelper[n[0]](context,n[1],n[2])},dragAllPaths:function(n,t){var s=this.global,f=s.prevX,e=s.prevY,u,i,h=points.length,r=this.getPoint,o=s.startingIndex;for(o;o<h;o++)u=points[o],i=u[1],u[0]==="line"&&(points[o]=[u[0],[r(n,f,i[0]),r(t,e,i[1]),r(n,f,i[2]),r(t,e,i[3])],u[2]]),u[0]==="arc"&&(points[o]=[u[0],[r(n,f,i[0]),r(t,e,i[1]),i[2],i[3],i[4]],u[2]]),u[0]==="rect"&&(points[o]=[u[0],[r(n,f,i[0]),r(t,e,i[1]),i[2],i[3]],u[2]]),u[0]==="quadratic"&&(points[o]=[u[0],[r(n,f,i[0]),r(t,e,i[1]),r(n,f,i[2]),r(t,e,i[3]),r(n,f,i[4]),r(t,e,i[5])],u[2]]),u[0]==="bezier"&&(points[o]=[u[0],[r(n,f,i[0]),r(t,e,i[1]),r(n,f,i[2]),r(t,e,i[3]),r(n,f,i[4]),r(t,e,i[5]),r(n,f,i[6]),r(t,e,i[7])],u[2]])},dragLastPath:function(n,t){var f=this.global,e=f.prevX,o=f.prevY,u=points[points.length-1],i=u[1],r=this.getPoint,s=f.pointsToMove==="all";u[0]==="line"&&((f.pointsToMove==="head"||s)&&(i[0]=r(n,e,i[0]),i[1]=r(t,o,i[1])),(f.pointsToMove==="tail"||s)&&(i[2]=r(n,e,i[2]),i[3]=r(t,o,i[3])),points[points.length-1]=[u[0],i,u[2]]),u[0]==="arc"&&(i[0]=r(n,e,i[0]),i[1]=r(t,o,i[1]),points[points.length-1]=[u[0],i,u[2]]),u[0]==="rect"&&(s&&(i[0]=r(n,e,i[0]),i[1]=r(t,o,i[1])),f.pointsToMove==="stretch"&&(i[2]=r(n,e,i[2]),i[3]=r(t,o,i[3])),points[points.length-1]=[u[0],i,u[2]]),u[0]==="quadratic"&&((f.pointsToMove==="starting-points"||s)&&(i[0]=r(n,e,i[0]),i[1]=r(t,o,i[1])),(f.pointsToMove==="control-points"||s)&&(i[2]=r(n,e,i[2]),i[3]=r(t,o,i[3])),(f.pointsToMove==="ending-points"||s)&&(i[4]=r(n,e,i[4]),i[5]=r(t,o,i[5])),points[points.length-1]=[u[0],i,u[2]]),u[0]==="bezier"&&((f.pointsToMove==="starting-points"||s)&&(i[0]=r(n,e,i[0]),i[1]=r(t,o,i[1])),(f.pointsToMove==="1st-control-points"||s)&&(i[2]=r(n,e,i[2]),i[3]=r(t,o,i[3])),(f.pointsToMove==="2nd-control-points"||s)&&(i[4]=r(n,e,i[4]),i[5]=r(t,o,i[5])),(f.pointsToMove==="ending-points"||s)&&(i[6]=r(n,e,i[6]),i[7]=r(t,o,i[7])),points[points.length-1]=[u[0],i,u[2]])}}
+var arcHandler={global:{ismousedown:!1,prevX:0,prevY:0,prevRadius:0,isCircleDrawn:!1,isCircledEnded:!0,isClockwise:!1,arcRangeContainer:null,arcRange:null},mousedown:function(n){var t=this.global,r=n.pageX-canvas.offsetLeft,i=n.pageY-canvas.offsetTop;t.prevX=r,t.prevY=i,t.ismousedown=!0},mouseup:function(n){var t=this.global,f=n.pageX-canvas.offsetLeft,e=n.pageY-canvas.offsetTop,s,o;if(t.ismousedown)if(!t.isCircleDrawn&&t.isCircledEnded){var u=t.prevX,i=t.prevY,r=(f-u+(e-i))/3;t.prevRadius=r,t.isCircleDrawn=!0,t.isCircleEnded=!1;var c=2*Math.PI*r/21,h,l=u>f?u-f:f-u,a=i>e?i-e:e-i;h=(l+a)/(2*c),points[points.length]=["arc",[u+r,i+r,r,h,1],drawHelper.getOptions()],s=t.arcRange,o=t.arcRangeContainer,o.style.display="block",s.focus(),o.style.top=e+canvas.offsetTop+20+"px",o.style.left=f+"px",s.value=2}else t.isCircleDrawn&&!t.isCircleEnded&&this.end();t.ismousedown=!1,this.fixAllPoints()},mousemove:function(n){var t=this.global,s=n.pageX-canvas.offsetLeft,o=n.pageY-canvas.offsetTop,f=t.ismousedown,h=t.isCircleDrawn,e=t.isCircledEnded;if(f)if(!h&&e){var r=t.prevX,u=t.prevY,i=(s-r+(o-u))/3;tempContext.clearRect(0,0,2e3,2e3),drawHelper.arc(tempContext,[r+i,u+i,i,Math.PI*2,!0])}},fixAllPoints:function(){for(var i=this.toFixed,r,n,t=0;t<points.length;t++)r=points[t],r[0]==="arc"&&(n=r[1],points[t]=["arc",[i(n[0]),i(n[1]),i(n[2]),i(n[3]),n[4]],r[2]])},init:function(){var i=find("is-clockwise"),n=this.global,t;n.arcRangeContainer=find("arc-range-container"),n.arcRange=find("arc-range"),addEvent(i,"change",function(t){n.isClockwise=i.checked,n.arcRange.value=arcHandler.toFixed(n.arcRange.value),n.arcRange.focus(),arcHandler.arcRangeHandler(t);if(!points.length)return;var u=points[points.length-1],r=u[1];tempContext.clearRect(0,0,innerWidth,innerHeight),drawHelper.arc(tempContext,[r[0],r[1],r[2],r[3],r[4]])}),t=n.arcRange,addEvent(t,"keydown",this.arcRangeHandler),addEvent(t,"focus",this.arcRangeHandler)},arcRangeHandler:function(n){var o=arcHandler.global,f=o.arcRange,t=n.keyCode,i=+f.value,e,r,u;(t==39||t==40)&&(f.value=(i<2?i:1.98)+.02),(t==37||t==38)&&(f.value=(i>0?i:.02)-.02),t&&t!=13&&t!=39&&t!=40&&t!=37&&t!=38||(e=Math.PI*arcHandler.toFixed(i),r=points[points.length-1],r[0]==="arc"&&(u=r[1],points[points.length-1]=["arc",[u[0],u[1],u[2],e,o.isClockwise?1:0],r[2]],drawHelper.redraw()))},toFixed:function(n){return Number(n).toFixed(1)},end:function(){var n=this.global;n.arcRangeContainer.style.display="none",n.arcRange.value=2,n.isCircleDrawn=!1,n.isCircleEnded=!0,drawHelper.redraw()}};arcHandler.init()	
+var lineHandler={ismousedown:!1,prevX:0,prevY:0,mousedown:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this;t.prevX=i,t.prevY=r,t.ismousedown=!0},mouseup:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this;t.ismousedown&&(points[points.length]=["line",[t.prevX,t.prevY,i,r],drawHelper.getOptions()],t.ismousedown=!1)},mousemove:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this;t.ismousedown&&(tempContext.clearRect(0,0,innerWidth,innerHeight),drawHelper.line(tempContext,[t.prevX,t.prevY,i,r]))}}
+var rectHandler={ismousedown:!1,prevX:0,prevY:0,mousedown:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this;t.prevX=i,t.prevY=r,t.ismousedown=!0},mouseup:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this;t.ismousedown&&(points[points.length]=["rect",[t.prevX,t.prevY,i-t.prevX,r-t.prevY],drawHelper.getOptions()],t.ismousedown=!1)},mousemove:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this;t.ismousedown&&(tempContext.clearRect(0,0,innerWidth,innerHeight),drawHelper.rect(tempContext,[t.prevX,t.prevY,i-t.prevX,r-t.prevY]))}}
+var quadraticHandler={global:{ismousedown:!1,prevX:0,prevY:0,controlPointX:0,controlPointY:0,isFirstStep:!0,isLastStep:!1},mousedown:function(n){var t=this.global,r=n.pageX-canvas.offsetLeft,i=n.pageY-canvas.offsetTop;t.isLastStep||(t.prevX=r,t.prevY=i),t.ismousedown=!0,t.isLastStep&&t.ismousedown&&this.end(r,i)},mouseup:function(n){var t=this.global,r=n.pageX-canvas.offsetLeft,i=n.pageY-canvas.offsetTop;t.ismousedown&&t.isFirstStep&&(t.controlPointX=r,t.controlPointY=i,t.isFirstStep=!1,t.isLastStep=!0)},mousemove:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this.global;tempContext.clearRect(0,0,innerWidth,innerHeight),t.ismousedown&&t.isFirstStep&&drawHelper.quadratic(tempContext,[t.prevX,t.prevY,i,r,i,r]),t.isLastStep&&drawHelper.quadratic(tempContext,[t.prevX,t.prevY,t.controlPointX,t.controlPointY,i,r])},end:function(n,t){var i=this.global;if(!i.ismousedown)return;i.isLastStep=!1,i.isFirstStep=!0,i.ismousedown=!1,n=n||i.controlPointX||i.prevX,t=t||i.controlPointY||i.prevY,points[points.length]=["quadratic",[i.prevX,i.prevY,i.controlPointX,i.controlPointY,n,t],drawHelper.getOptions()]}}
+var bezierHandler={global:{ismousedown:!1,prevX:0,prevY:0,firstControlPointX:0,firstControlPointY:0,secondControlPointX:0,secondControlPointY:0,isFirstStep:!0,isSecondStep:!1,isLastStep:!1},mousedown:function(n){var t=this.global,r=n.pageX-canvas.offsetLeft,i=n.pageY-canvas.offsetTop;t.isLastStep||t.isSecondStep||(t.prevX=r,t.prevY=i),t.ismousedown=!0,t.isLastStep&&t.ismousedown&&this.end(r,i),t.ismousedown&&t.isSecondStep&&(t.secondControlPointX=r,t.secondControlPointY=i,t.isSecondStep=!1,t.isLastStep=!0)},mouseup:function(n){var t=this.global,r=n.pageX-canvas.offsetLeft,i=n.pageY-canvas.offsetTop;t.ismousedown&&t.isFirstStep&&(t.firstControlPointX=r,t.firstControlPointY=i,t.isFirstStep=!1,t.isSecondStep=!0)},mousemove:function(n){var i=n.pageX-canvas.offsetLeft,r=n.pageY-canvas.offsetTop,t=this.global;tempContext.clearRect(0,0,innerWidth,innerHeight),t.ismousedown&&t.isFirstStep&&drawHelper.bezier(tempContext,[t.prevX,t.prevY,i,r,i,r,i,r]),t.ismousedown&&t.isSecondStep&&drawHelper.bezier(tempContext,[t.prevX,t.prevY,t.firstControlPointX,t.firstControlPointY,i,r,i,r]),t.isLastStep&&drawHelper.bezier(tempContext,[t.prevX,t.prevY,t.firstControlPointX,t.firstControlPointY,t.secondControlPointX,t.secondControlPointY,i,r])},end:function(n,t){var i=this.global;if(!i.ismousedown)return;i.isLastStep=i.isSecondStep=!1,i.isFirstStep=!0,i.ismousedown=!1,i.secondControlPointX=i.secondControlPointX||i.firstControlPointX,i.secondControlPointY=i.secondControlPointY||i.firstControlPointY,n=n||i.secondControlPointX,t=t||i.secondControlPointY,points[points.length]=["bezier",[i.prevX,i.prevY,i.firstControlPointX,i.firstControlPointY,i.secondControlPointX,i.secondControlPointY,n,t],drawHelper.getOptions()]}}
+function onkeydown(n){keyCode=n.keyCode,isControlKeyPressed||keyCode!==17||(isControlKeyPressed=!0)}function onkeyup(n){keyCode=n.keyCode,isControlKeyPressed&&keyCode===90&&points.length&&(points.length=points.length-1,drawHelper.redraw()),isControlKeyPressed&&keyCode===65&&(dragHelper.global.startingIndex=0,endLastPath(),setSelection(find("drag-all-paths"),"DragAllPaths")),isControlKeyPressed&&keyCode===67&&points.length&&copy(),isControlKeyPressed&&keyCode===86&&copiedStuff.length&&paste(),keyCode===17&&(isControlKeyPressed=!1)}var canvas=tempContext.canvas,isTouch="createTouch"in document,keyCode;addEvent(canvas,isTouch?"touchstart":"mousedown",function(n){isTouch&&(n=n.pageX?n:n.touches.length?n.touches[0]:{pageX:0,pageY:0});var t=is;t.isLine?lineHandler.mousedown(n):t.isArc?arcHandler.mousedown(n):t.isRectangle?rectHandler.mousedown(n):t.isQuadraticCurve?quadraticHandler.mousedown(n):t.isBezierCurve?bezierHandler.mousedown(n):(t.isDragLastPath||t.isDragAllPaths)&&dragHelper.mousedown(n),drawHelper.redraw()}),addEvent(document,isTouch?"touchend":"mouseup",function(n){isTouch&&(n=n.pageX?n:n.touches.length?n.touches[0]:{pageX:0,pageY:0});var t=is;t.isLine?lineHandler.mouseup(n):t.isArc?arcHandler.mouseup(n):t.isRectangle?rectHandler.mouseup(n):t.isQuadraticCurve?quadraticHandler.mouseup(n):t.isBezierCurve?bezierHandler.mouseup(n):(t.isDragLastPath||t.isDragAllPaths)&&dragHelper.mouseup(n),drawHelper.redraw()}),addEvent(canvas,isTouch?"touchmove":"mousemove",function(n){isTouch&&(n=n.pageX?n:n.touches.length?n.touches[0]:{pageX:0,pageY:0});var t=is;t.isLine?lineHandler.mousemove(n):t.isArc?arcHandler.mousemove(n):t.isRectangle?rectHandler.mousemove(n):t.isQuadraticCurve?quadraticHandler.mousemove(n):t.isBezierCurve?bezierHandler.mousemove(n):(t.isDragLastPath||t.isDragAllPaths)&&dragHelper.mousemove(n)}),addEvent(document,"keydown",onkeydown),addEvent(document,"keyup",onkeyup)
+	</script>
+</body>
+</html>

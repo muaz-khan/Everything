@@ -1,0 +1,59 @@
+﻿::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.first
+{
+    margin:20px;
+    width:92%;
+    overflow:auto;    
+    padding:10px;
+}
+.first, .rotate
+{
+    border-radius:5px;
+    border:1px solid #E5E5E5;    
+}
+input[type=range], .search-suggestions
+{
+    -webkit-transform:none;
+}
+
+@media all and (-webkit-transform-3d) {
+    .rotate
+    {
+        width:100%;
+        height:100px;
+        background-color: rgba(0, 0, 0, 0.2);  
+        padding: 20px;
+        font-size: 40px;
+        margin-top:5px;
+        
+        -webkit-perspective: 1000;
+        -webkit-transform-style: preserve-3d;
+        -webkit-box-sizing: border-box;        
+    }
+    .rotateZ
+    {
+        -webkit-transform: rotateZ(-180deg);
+    }
+    .rotateX
+    {
+        -webkit-transform: rotateX(-180deg);
+    }
+    .rotateY
+    {
+        -webkit-transform: rotateY(-180deg);
+    }
+    .rotate0
+    {
+        -webkit-transform: rotate(-180deg);
+    }
+    
+    /* ---------------------------- */
+    .scale
+    {
+        -webkit-transform: scale(1.1);
+    }
+}

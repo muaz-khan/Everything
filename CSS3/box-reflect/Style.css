@@ -1,0 +1,10 @@
+﻿.first
+{
+    margin:20px;
+    width:92%;
+    border-radius:5px;
+    border:1px solid #E5E5E5;    
+    padding:10px;
+    margin-bottom:50px;
+    -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.8, transparent), to(white));
+}

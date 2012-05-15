@@ -1,0 +1,57 @@
+﻿<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+<!-- Muaz Khan (@muazkh) - Web Developer from Pakistan! -->
+<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
+
+	<title>Bezier Curves and Coloring → Part 3 ® Muaz Khan</title>    
+	<meta name="description" content="Bezier Curves and Coloring → Part 3 ® Muaz Khan - HTML5 Canvas 2D API relevant tools, experiments, tips & tricks from Muaz Khan. Muaz Khan is a web-developer from Pakistan!">
+	<meta name="author" content="Muaz Khan"><link rel="author" type="text/html" href="https://plus.google.com/100325991024054712503">
+	<link href="../../../../Style.css" rel="stylesheet">
+	<style>
+		::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+	</style>
+</head>
+	<body itemscope itemtype="http://schema.org/WebPage">
+		<h1>Bezier Curves and Coloring → Part 3</h1>
+		<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+		<section>
+			<canvas id="canvas"></canvas>
+		</section>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+		<div class="view-buttons">
+			<a href="../Part-1/" title="Bezier Curves and Coloring - Part 1">1</a> 
+			– <a href="../Part-2/" title="Bezier Curves and Coloring - Part 2">2</a> 
+			– <a href="../Part-3/" title="Bezier Curves and Coloring - Part 3">3</a> 
+			– <a href="../Part-4/" title="Bezier Curves and Coloring - Part 4">4</a> 
+			– <a href="../Part-5/" title="Bezier Curves and Coloring - Part 5">5</a> 
+			– <a href="../Part-6/" title="Bezier Curves and Coloring - Part 6">6</a> 
+			– <a href="../Part-7/" title="Bezier Curves and Coloring - Part 7">7</a> 
+			– <a href="../Part-8/" title="Bezier Curves and Coloring - Part 8">8</a> 			
+		</div>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	<div class="footer" itemprop="breadcrumb">
+		© 2012 <a href="https://plus.google.com/100325991024054712503" rel="author" title="Muaz Khan's Google+ profile">Muaz Khan</a>
+		(<a href="http://twitter.com/muazkh" title="@muazkh">@muazkh</a> | <a href="mailto:muazkh@gmail.com" title="muazkh@gmail.com">Email</a>) 		
+		® <a href="../../../">Home</a> » <a href="../../">Experiments</a> » <a href="../">Bezier Curves and Coloring</a>
+	</div>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	    <script>
+    	    if(!innerWidth) var innerWidth = document.body.clientWidth;
+          if(!innerHeight) var innerHeight = document.body.clientHeight;		
+          innerHeight = innerHeight - (innerHeight / 3);
+          
+    	    document.createElement("canvas").getContext?(function(){function a(){s.closePath(),s.fillStyle="rgba("+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", .9)",s.fill(),s.beginPath()}function l(){var v;c+=5,h===1&&(t+=5,o+=5,n+=5,u+=5,c>30&&(h=2)),h===2&&(t-=5,o-=5,n-=5,u-=5,c>60&&(h=3)),h===3&&(f+=5,r+=5,i+=5,e+=5,c>90&&(h=4)),h===4&&(f-=5,r-=5,i-=5,e-=5,c>120&&(c=0,h=1)),s.clearRect(0,0,5e4,5e4);var p=[[t,n],[t,n],[t,n],[t,n],[t,n],[t,n],[t+155,n-1],[t+155,n-1],[t+155,n-1],[t+155,n-1],[t+155,n-1],[t+155,n-1],[t+311,n],[t+311,n],[t+311,n],[t+311,n],[t+311,n],[t+311,n],[t+466,n-1],[t+466,n-1],[t+466,n-1],[t+466,n-1],[t+466,n-1],[t+466,n-1],[t+80,n+95],[t+80,n+95],[t+80,n+95],[t+80,n+95],[t+80,n+95],[t+80,n+95],[t+235,n+94],[t+235,n+94],[t+235,n+94],[t+235,n+94],[t+235,n+94],[t+235,n+94],[t+391,n+95],[t+391,n+95],[t+391,n+95],[t+391,n+95],[t+391,n+95],[t+391,n+95],[t+546,n+94],[t+546,n+94],[t+546,n+94],[t+546,n+94],[t+546,n+94],[t+546,n+94],[t+6,n+190],[t+6,n+190],[t+6,n+190],[t+6,n+190],[t+6,n+190],[t+6,n+190],[t+161,n+189],[t+161,n+189],[t+161,n+189],[t+161,n+189],[t+161,n+189],[t+161,n+189],[t+317,n+190],[t+317,n+190],[t+317,n+190],[t+317,n+190],[t+317,n+190],[t+317,n+190],[t+472,n+189],[t+472,n+189],[t+472,n+189],[t+472,n+189],[t+472,n+189],[t+472,n+189],[t+86,n+285],[t+86,n+285],[t+86,n+285],[t+86,n+285],[t+86,n+285],[t+86,n+285],[t+241,n+284],[t+241,n+284],[t+241,n+284],[t+241,n+284],[t+241,n+284],[t+241,n+284],[t+397,n+285],[t+397,n+285],[t+397,n+285],[t+397,n+285],[t+397,n+285],[t+397,n+285],[t+552,n+284],[t+552,n+284],[t+552,n+284],[t+552,n+284],[t+552,n+284],[t+552,n+284]],y=[[f,i,r,e,o,u],[f+36,i+21,r+11,e+46,o,u],[f+36,i+69,r+14,e+58,o,u],[f+41,i+104,r-1,e+105,o,u],[f+48,i+154,r,e+118,o,u],[f+41,i+187,r,e+118,o,u],[f+155,i-1,r+155,e-1,o+155,u-1],[f+191,i+20,r+166,e+45,o+155,u-1],[f+191,i+68,r+169,e+57,o+155,u-1],[f+196,i+103,r+154,e+104,o+155,u-1],[f+203,i+153,r+155,e+117,o+155,u-1],[f+196,i+186,r+155,e+117,o+155,u-1],[f+311,i,r+311,e,o+311,u],[f+347,i+21,r+322,e+46,o+311,u],[f+347,i+69,r+325,e+58,o+311,u],[f+352,i+104,r+310,e+105,o+311,u],[f+359,i+154,r+311,e+118,o+311,u],[f+352,i+187,r+311,e+118,o+311,u],[f+466,i-1,r+466,e-1,o+466,u-1],[f+502,i+20,r+477,e+45,o+466,u-1],[f+502,i+68,r+480,e+57,o+466,u-1],[f+507,i+103,r+465,e+104,o+466,u-1],[f+514,i+153,r+466,e+117,o+466,u-1],[f+507,i+186,r+466,e+117,o+466,u-1],[f+80,i+95,r+80,e+95,o+80,u+95],[f+116,i+116,r+91,e+141,o+80,u+95],[f+116,i+164,r+94,e+153,o+80,u+95],[f+121,i+199,r+79,e+200,o+80,u+95],[f+128,i+249,r+80,e+213,o+80,u+95],[f+121,i+282,r+80,e+213,o+80,u+95],[f+235,i+94,r+235,e+94,o+235,u+94],[f+271,i+115,r+246,e+140,o+235,u+94],[f+271,i+163,r+249,e+152,o+235,u+94],[f+276,i+198,r+234,e+199,o+235,u+94],[f+283,i+248,r+235,e+212,o+235,u+94],[f+276,i+281,r+235,e+212,o+235,u+94],[f+391,i+95,r+391,e+95,o+391,u+95],[f+427,i+116,r+402,e+141,o+391,u+95],[f+427,i+164,r+405,e+153,o+391,u+95],[f+432,i+199,r+390,e+200,o+391,u+95],[f+439,i+249,r+391,e+213,o+391,u+95],[f+432,i+282,r+391,e+213,o+391,u+95],[f+546,i+94,r+546,e+94,o+546,u+94],[f+582,i+115,r+557,e+140,o+546,u+94],[f+582,i+163,r+560,e+152,o+546,u+94],[f+587,i+198,r+545,e+199,o+546,u+94],[f+594,i+248,r+546,e+212,o+546,u+94],[f+587,i+281,r+546,e+212,o+546,u+94],[f+6,i+190,r+6,e+190,o+6,u+190],[f+42,i+211,r+17,e+236,o+6,u+190],[f+42,i+259,r+20,e+248,o+6,u+190],[f+47,i+294,r+5,e+295,o+6,u+190],[f+54,i+344,r+6,e+308,o+6,u+190],[f+47,i+377,r+6,e+308,o+6,u+190],[f+161,i+189,r+161,e+189,o+161,u+189],[f+197,i+210,r+172,e+235,o+161,u+189],[f+197,i+258,r+175,e+247,o+161,u+189],[f+202,i+293,r+160,e+294,o+161,u+189],[f+209,i+343,r+161,e+307,o+161,u+189],[f+202,i+376,r+161,e+307,o+161,u+189],[f+317,i+190,r+317,e+190,o+317,u+190],[f+353,i+211,r+328,e+236,o+317,u+190],[f+353,i+259,r+331,e+248,o+317,u+190],[f+358,i+294,r+316,e+295,o+317,u+190],[f+365,i+344,r+317,e+308,o+317,u+190],[f+358,i+377,r+317,e+308,o+317,u+190],[f+472,i+189,r+472,e+189,o+472,u+189],[f+508,i+210,r+483,e+235,o+472,u+189],[f+508,i+258,r+486,e+247,o+472,u+189],[f+513,i+293,r+471,e+294,o+472,u+189],[f+520,i+343,r+472,e+307,o+472,u+189],[f+513,i+376,r+472,e+307,o+472,u+189],[f+86,i+285,r+86,e+285,o+86,u+285],[f+122,i+306,r+97,e+331,o+86,u+285],[f+122,i+354,r+100,e+343,o+86,u+285],[f+127,i+389,r+85,e+390,o+86,u+285],[f+134,i+439,r+86,e+403,o+86,u+285],[f+127,i+472,r+86,e+403,o+86,u+285],[f+241,i+284,r+241,e+284,o+241,u+284],[f+277,i+305,r+252,e+330,o+241,u+284],[f+277,i+353,r+255,e+342,o+241,u+284],[f+282,i+388,r+240,e+389,o+241,u+284],[f+289,i+438,r+241,e+402,o+241,u+284],[f+282,i+471,r+241,e+402,o+241,u+284],[f+397,i+285,r+397,e+285,o+397,u+285],[f+433,i+306,r+408,e+331,o+397,u+285],[f+433,i+354,r+411,e+343,o+397,u+285],[f+438,i+389,r+396,e+390,o+397,u+285],[f+445,i+439,r+397,e+403,o+397,u+285],[f+438,i+472,r+397,e+403,o+397,u+285],[f+552,i+284,r+552,e+284,o+552,u+284],[f+588,i+305,r+563,e+330,o+552,u+284],[f+588,i+353,r+566,e+342,o+552,u+284],[f+593,i+388,r+551,e+389,o+552,u+284],[f+600,i+438,r+552,e+402,o+552,u+284],[f+593,i+471,r+552,e+402,o+552,u+284]],w=96;for(v=0;v<w;v++)s.moveTo(p[v][0],p[v][1]),s.bezierCurveTo(y[v][0],y[v][1],y[v][2],y[v][3],y[v][4],y[v][5]),a();oninterval(l)}var s;window.oninterval=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}(),s=document.getElementById("canvas").getContext("2d"),s.canvas.width=innerWidth,s.canvas.height=innerHeight,s.lineWidth=2;var c=0,h=1,t=141,n=131,f=172,i=36,r=256,e=43,o=298,u=131;l()})():(alert("Your browser is not supporting HTML5 Canvas APIs!"))
+    	</script>
+	
+	<script src="../../../../JavaScript.js"></script>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+</body>
+</html>

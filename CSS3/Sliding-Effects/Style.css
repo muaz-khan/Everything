@@ -1,0 +1,35 @@
+﻿.panel
+{
+    margin:20px;
+    width:92%;
+    border-radius:5px;
+    border:1px solid #E5E5E5;    
+    padding:10px;
+    margin-bottom:50px;
+    -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.8, transparent), to(white));
+
+    -webkit-transition:     height .8s ease;
+    -moz-transition:        height .8s ease;
+    -o-transition:          height .8s ease;
+    -ms-transition:         height .8s ease;
+    transition:             height .8s ease;
+    
+    height:35px;
+}
+
+.blue-button
+{
+    background-color: #3399FF;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color:White;
+}
+.blue-button:hover
+{
+    background-color: #0076EC;
+}
+.blue-button:active
+{
+    background-color: #0053A6;
+}

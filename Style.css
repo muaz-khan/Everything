@@ -1,0 +1,151 @@
+﻿/* Muaz Khan (@muazkh) */
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 0;
+    background-color:transparent;
+}
+
+::-webkit-scrollbar-button {
+    height: 0;
+    width: 0
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius:60% 0 0 60%;
+}
+
+::-webkit-scrollbar-track {
+    background-color:transparent;
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+    border-radius:100%;
+}
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+::selection, ::-moz-selection {
+    background: #00A2E8;
+    color: #fff;
+    text-shadow: none;
+}
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+html, body, .footer, input, textarea, h1, h2 {
+    margin: 0;
+    padding: 0;
+
+    word-wrap: break-word;
+
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+
+    font-family: Verdana, arial, helvetica, sans-serif
+}
+html, body {
+    background-color: #FBFBFB;
+    font-size: 13px;
+    height:100%;
+    cursor: default;
+}
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+.footer
+{
+    border-top: 1px solid #E5E5E5;
+    text-align: center;
+}
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+h1, h2
+{
+    border-bottom: 1px solid #E5E5E5;
+    text-align: center;
+    text-shadow: 1px 1px #E5E5E5, 2px 2px white, 3px 3px #E5E5E5;
+    color: #6c96c8;
+    font-size: 350%;
+    font-weight: normal;
+    padding-bottom: 10px;
+
+    overflow:hidden;
+    height: 55px;
+}
+
+h1, .footer
+{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1
+{
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 97%, rgba(237,237,237,1) 97%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(97%,rgba(243,243,243,1)), color-stop(97%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 97%,rgba(237,237,237,1) 97%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: normal;
+    text-align: left;
+    height: auto;
+}
+
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+
+a {
+    color: #0b7aff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #043877;
+}
+
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+
+section h2, section p, section pre, div h2, div p, div pre
+{
+  padding: 1% 2%;
+}
+
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+
+pre, code {
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Courier New", monospace;
+    color: #666
+}
+
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+
+img {
+    width: 100%;
+    -webkit-user-drag: none;  
+}
+
+img:hover {
+    box-shadow: 0 0 3px rgb(0, 162, 232);
+}
+
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+
+img, .view-buttons a
+{
+    border: 1px solid rgb(0, 162, 232);
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgb(0, 162, 232);
+}
+
+.view-buttons a {    
+    padding: 5px 10px;
+    background-color: #FBFBFB;
+}
+
+.view-buttons {
+    padding: 20px;
+    text-align: center;
+}
+
+/*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/

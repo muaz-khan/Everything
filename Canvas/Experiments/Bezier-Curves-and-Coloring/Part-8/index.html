@@ -1,0 +1,57 @@
+﻿<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+<!-- Muaz Khan (@muazkh) - Web Developer from Pakistan! -->
+<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
+
+	<title>Bezier Curves and Coloring → Part 8 ® Muaz Khan</title>    
+	<meta name="description" content="Bezier Curves and Coloring → Part 8 ® Muaz Khan - HTML5 Canvas 2D API relevant tools, experiments, tips & tricks from Muaz Khan. Muaz Khan is a web-developer from Pakistan!">
+	<meta name="author" content="Muaz Khan"><link rel="author" type="text/html" href="https://plus.google.com/100325991024054712503">
+	<link href="../../../../Style.css" rel="stylesheet">
+	<style>
+		::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+	</style>
+</head>
+	<body itemscope itemtype="http://schema.org/WebPage">
+		<h1>Bezier Curves and Coloring → Part 8</h1>
+		<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+		<section>
+			<canvas id="canvas"></canvas>
+		</section>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+		<div class="view-buttons">
+			<a href="../Part-1/" title="Bezier Curves and Coloring - Part 1">1</a> 
+			– <a href="../Part-2/" title="Bezier Curves and Coloring - Part 2">2</a> 
+			– <a href="../Part-3/" title="Bezier Curves and Coloring - Part 3">3</a> 
+			– <a href="../Part-4/" title="Bezier Curves and Coloring - Part 4">4</a> 
+			– <a href="../Part-5/" title="Bezier Curves and Coloring - Part 5">5</a> 
+			– <a href="../Part-6/" title="Bezier Curves and Coloring - Part 6">6</a> 
+			– <a href="../Part-7/" title="Bezier Curves and Coloring - Part 7">7</a> 
+			– <a href="../Part-8/" title="Bezier Curves and Coloring - Part 8">8</a> 			
+		</div>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	<div class="footer" itemprop="breadcrumb">
+		© 2012 <a href="https://plus.google.com/100325991024054712503" rel="author" title="Muaz Khan's Google+ profile">Muaz Khan</a>
+		(<a href="http://twitter.com/muazkh" title="@muazkh">@muazkh</a> | <a href="mailto:muazkh@gmail.com" title="muazkh@gmail.com">Email</a>) 		
+		® <a href="../../../">Home</a> » <a href="../../">Experiments</a> » <a href="../">Bezier Curves and Coloring</a>
+	</div>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+	    <script>
+    	    if(!innerWidth) var innerWidth = document.body.clientWidth;
+          if(!innerHeight) var innerHeight = document.body.clientHeight;		
+          innerHeight = innerHeight - (innerHeight / 3);
+          
+    	    document.createElement("canvas").getContext?(function(){function a(){s.closePath(),s.fillStyle="rgba("+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", "+parseInt(Math.random()*255)+", .9)",s.fill(),s.beginPath()}function l(){var v;c+=5,h===1&&(t+=5,o+=5,n+=5,u+=5,c>20&&(h=2)),h===2&&(t-=5,o-=5,n-=5,u-=5,c>40&&(h=3)),h===3&&(f+=5,r+=5,i+=5,e+=5,c>60&&(h=4)),h===4&&(f-=5,r-=5,i-=5,e-=5,c>80&&(c=0,h=1)),s.clearRect(0,0,5e4,5e4);var p=[[t,n],[t,n],[t,n],[t,n],[t+15,n+139],[t+106,n+140],[t+106,n+140],[t+106,n+140],[t+106,n+140],[t+121,n+279],[t+131,n+20],[t+131,n+20],[t+131,n+20],[t+131,n+20],[t+146,n+159],[t+237,n+160],[t+237,n+160],[t+237,n+160],[t+237,n+160],[t+252,n+299],[t+266,n+48],[t+266,n+48],[t+266,n+48],[t+266,n+48],[t+281,n+187],[t+372,n+188],[t+372,n+188],[t+372,n+188],[t+372,n+188],[t+387,n+327],[t+397,n+68],[t+397,n+68],[t+397,n+68],[t+397,n+68],[t+412,n+207],[t+503,n+208],[t+503,n+208],[t+503,n+208],[t+503,n+208],[t+518,n+347],[t+64,n+264],[t+64,n+264],[t+64,n+264],[t+64,n+264],[t+79,n+403],[t+170,n+404],[t+170,n+404],[t+170,n+404],[t+170,n+404],[t+185,n+543],[t+195,n+284],[t+195,n+284],[t+195,n+284],[t+195,n+284],[t+210,n+423],[t+301,n+424],[t+301,n+424],[t+301,n+424],[t+301,n+424],[t+316,n+563],[t+330,n+312],[t+330,n+312],[t+330,n+312],[t+330,n+312],[t+345,n+451],[t+436,n+452],[t+436,n+452],[t+436,n+452],[t+436,n+452],[t+451,n+591],[t+461,n+332],[t+461,n+332],[t+461,n+332],[t+461,n+332],[t+476,n+471],[t+567,n+472],[t+567,n+472],[t+567,n+472],[t+567,n+472],[t+582,n+611]],y=[[f,i,r,e,o,u],[f,i,r-226,e+95,o,u],[f-27,i-34,r-235,e+136,o,u],[f-5,i-35,r+39,e+13,o,u],[f+40,i+46,r-20,e+69,o+45,u-25],[f+106,i+140,r+106,e+140,o+106,u+140],[f+106,i+140,r-120,e+235,o+106,u+140],[f+79,i+106,r-129,e+276,o+106,u+140],[f+101,i+105,r+145,e+153,o+106,u+140],[f+146,i+186,r+86,e+209,o+151,u+115],[f+131,i+20,r+131,e+20,o+131,u+20],[f+131,i+20,r-95,e+115,o+131,u+20],[f+104,i-14,r-104,e+156,o+131,u+20],[f+126,i-15,r+170,e+33,o+131,u+20],[f+171,i+66,r+111,e+89,o+176,u-5],[f+237,i+160,r+237,e+160,o+237,u+160],[f+237,i+160,r+11,e+255,o+237,u+160],[f+210,i+126,r+2,e+296,o+237,u+160],[f+232,i+125,r+276,e+173,o+237,u+160],[f+277,i+206,r+217,e+229,o+282,u+135],[f+266,i+48,r+266,e+48,o+266,u+48],[f+266,i+48,r+40,e+143,o+266,u+48],[f+239,i+14,r+31,e+184,o+266,u+48],[f+261,i+13,r+305,e+61,o+266,u+48],[f+306,i+94,r+246,e+117,o+311,u+23],[f+372,i+188,r+372,e+188,o+372,u+188],[f+372,i+188,r+146,e+283,o+372,u+188],[f+345,i+154,r+137,e+324,o+372,u+188],[f+367,i+153,r+411,e+201,o+372,u+188],[f+412,i+234,r+352,e+257,o+417,u+163],[f+397,i+68,r+397,e+68,o+397,u+68],[f+397,i+68,r+171,e+163,o+397,u+68],[f+370,i+34,r+162,e+204,o+397,u+68],[f+392,i+33,r+436,e+81,o+397,u+68],[f+437,i+114,r+377,e+137,o+442,u+43],[f+503,i+208,r+503,e+208,o+503,u+208],[f+503,i+208,r+277,e+303,o+503,u+208],[f+476,i+174,r+268,e+344,o+503,u+208],[f+498,i+173,r+542,e+221,o+503,u+208],[f+543,i+254,r+483,e+277,o+548,u+183],[f+64,i+264,r+64,e+264,o+64,u+264],[f+64,i+264,r-162,e+359,o+64,u+264],[f+37,i+230,r-171,e+400,o+64,u+264],[f+59,i+229,r+103,e+277,o+64,u+264],[f+104,i+310,r+44,e+333,o+109,u+239],[f+170,i+404,r+170,e+404,o+170,u+404],[f+170,i+404,r-56,e+499,o+170,u+404],[f+143,i+370,r-65,e+540,o+170,u+404],[f+165,i+369,r+209,e+417,o+170,u+404],[f+210,i+450,r+150,e+473,o+215,u+379],[f+195,i+284,r+195,e+284,o+195,u+284],[f+195,i+284,r-31,e+379,o+195,u+284],[f+168,i+250,r-40,e+420,o+195,u+284],[f+190,i+249,r+234,e+297,o+195,u+284],[f+235,i+330,r+175,e+353,o+240,u+259],[f+301,i+424,r+301,e+424,o+301,u+424],[f+301,i+424,r+75,e+519,o+301,u+424],[f+274,i+390,r+66,e+560,o+301,u+424],[f+296,i+389,r+340,e+437,o+301,u+424],[f+341,i+470,r+281,e+493,o+346,u+399],[f+330,i+312,r+330,e+312,o+330,u+312],[f+330,i+312,r+104,e+407,o+330,u+312],[f+303,i+278,r+95,e+448,o+330,u+312],[f+325,i+277,r+369,e+325,o+330,u+312],[f+370,i+358,r+310,e+381,o+375,u+287],[f+436,i+452,r+436,e+452,o+436,u+452],[f+436,i+452,r+210,e+547,o+436,u+452],[f+409,i+418,r+201,e+588,o+436,u+452],[f+431,i+417,r+475,e+465,o+436,u+452],[f+476,i+498,r+416,e+521,o+481,u+427],[f+461,i+332,r+461,e+332,o+461,u+332],[f+461,i+332,r+235,e+427,o+461,u+332],[f+434,i+298,r+226,e+468,o+461,u+332],[f+456,i+297,r+500,e+345,o+461,u+332],[f+501,i+378,r+441,e+401,o+506,u+307],[f+567,i+472,r+567,e+472,o+567,u+472],[f+567,i+472,r+341,e+567,o+567,u+472],[f+540,i+438,r+332,e+608,o+567,u+472],[f+562,i+437,r+606,e+485,o+567,u+472],[f+607,i+518,r+547,e+541,o+612,u+447]],w=80;for(v=0;v<w;v++)s.moveTo(p[v][0],p[v][1]),s.bezierCurveTo(y[v][0],y[v][1],y[v][2],y[v][3],y[v][4],y[v][5]),a();oninterval(l)}var s;window.oninterval=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}(),s=document.getElementById("canvas").getContext("2d"),s.canvas.width=innerWidth,s.canvas.height=innerHeight,s.lineWidth=2;var c=0,h=1,t=159,n=-5,f=234,i=113,r=328,e=43,o=242,u=111;l()})():(alert("Your browser is not supporting HTML5 Canvas APIs!"))
+    	</script>
+	
+	<script src="../../../../JavaScript.js"></script>
+	<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
+</body>
+</html>
