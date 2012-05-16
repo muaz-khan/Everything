@@ -22,20 +22,23 @@ var drawHelper = {
 
     /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
 
-    handleOptions: function (context, opt) {
-        opt = opt || drawHelper.getOptions();
+    handleOptions: function (context, opt, isNoFillStroke) {
+        opt = opt || this.getOptions();
 
         context.globalAlpha = opt[3];
         context.globalCompositeOperation = opt[4];
+
         context.lineCap = opt[5];
         context.lineJoin = opt[6];
-
         context.lineWidth = opt[0];
-        context.strokeStyle = opt[1];
-        context.stroke();
 
+        context.strokeStyle = opt[1];
         context.fillStyle = opt[2];
-        context.fill();
+        
+        if (!isNoFillStroke) {
+            context.stroke();
+            context.fill();
+        }
     },
 
     /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
@@ -60,7 +63,7 @@ var drawHelper = {
     /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
 
     rect: function (context, point, options) {
-        this.handleOptions(context, options);
+        this.handleOptions(context, options, true);
 
         context.strokeRect(point[0], point[1], point[2], point[3]);
         context.fillRect(point[0], point[1], point[2], point[3]);

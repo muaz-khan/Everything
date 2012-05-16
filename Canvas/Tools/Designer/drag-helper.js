@@ -118,7 +118,7 @@ var dragHelper = {
             g = this.global;
 
         drawHelper.redraw();
-        
+
         if (g.ismousedown) {
             this.dragShape(x, y);
         }
