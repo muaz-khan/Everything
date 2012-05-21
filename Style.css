@@ -1,25 +1,30 @@
 ﻿/* Muaz Khan (@muazkh) */
 /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 0;
-    background-color:transparent;
+  height: 0;
+  overflow: visible;
+  width: 10px;  
+  border-left:1px solid rgb(229, 229, 229);
 }
-
-::-webkit-scrollbar-button {
-    height: 0;
-    width: 0
-}
-
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius:60% 0 0 60%;
+  background-color: rgba(0, 0, 0, .2);
+  background-clip: padding-box;    
+  min-height: 28px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+  border-width: 1px 1px 1px 6px;
 }
-
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+}
 ::-webkit-scrollbar-track {
-    background-color:transparent;
-    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
-    border-radius:100%;
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
 ::selection, ::-moz-selection {
@@ -149,3 +154,10 @@ img, .view-buttons a
 }
 
 /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
+.gplus-button
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 24px 34px;
+}
