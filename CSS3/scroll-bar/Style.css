@@ -1,4 +1,4 @@
-﻿.first, .second
+﻿.first, .second, .third
 {
     margin:20px;
     height:200px;
@@ -8,12 +8,13 @@
     border:1px solid #E5E5E5;    
     padding:10px;
 }
-
+<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
 /* FIRST STYLE */
 .first::-webkit-scrollbar {
     width: 10px;
     height: 7px;
     background-color:transparent;
+	border:0;
     }
 
 .first::-webkit-scrollbar-button {
@@ -25,6 +26,7 @@
     background-color:transparent;
     border-left:1px solid #E5E5E5;
     border-radius:20%;
+	box-shadow: none;
     }
 
 
@@ -32,12 +34,13 @@
     background-color:transparent;
     box-shadow: none;
     }
-
+<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->
 /* SECOND STYLE */
 .second::-webkit-scrollbar {
     width: 12px;
     height: 7px;
     background-color:transparent;
+	border:0;
     }
 
 .second::-webkit-scrollbar-button {
@@ -48,6 +51,7 @@
 .second::-webkit-scrollbar-thumb {
     background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
     border-radius: 50% 0 0 50%;
+	box-shadow: none;
     }
 
 .second::-webkit-scrollbar-thumb:hover {
@@ -62,3 +66,4 @@
     box-shadow: none;
     background-color: transparent;
     }
+<!--≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡-->	

@@ -50,6 +50,7 @@ html, body {
     font-size: 13px;
     height:100%;
     cursor: default;
+	overflow-x: hidden;
 }
 /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
 .footer
@@ -154,10 +155,9 @@ img, .view-buttons a
 }
 
 /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
-.gplus-button
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 24px 34px;
+.gplus-button {
+	position: absolute;
+	top: 0;
+	right: -43px;
+	padding: 24px 0;
 }

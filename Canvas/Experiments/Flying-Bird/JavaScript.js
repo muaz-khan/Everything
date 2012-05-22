@@ -30,7 +30,9 @@
     /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
     
     function first() {
-        var x = 300, y = 138, x1 = x + 30, y1 = y - 8, x2 = x - 42, y2 = y - 33, x3 = x, y3 = y;
+		var canv = context.canvas;
+		canv.style.left = filedContext.canvas.offsetLeft + 'px';
+        var x = canv.offsetLeft || (innerWidth / 2), y = 138, x1 = x + 30, y1 = y - 8, x2 = x - 42, y2 = y - 33, x3 = x, y3 = y;
 
         /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
         function drawBird() {
@@ -45,13 +47,11 @@
                 p = points[i];
                 point = p[1];                
                 
-                          
-               if (p[2]) {
+                if (p[2]) {
                     context.lineWidth = p[2][0];
-                    context.strokeStyle = p[2][1];   
-
-	       context.lineCap = p[2][5];
-                    context.lineJoin = p[2][6]; 
+                    context.strokeStyle = p[2][1];                    
+                    context.lineCap = p[2][5];
+                    context.lineJoin = p[2][6];
                 }
                 
                 if (p[0] === "line") {
@@ -103,19 +103,19 @@
     /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
     
     function second() {
-        var x = -innerWidth, y = 0, x1 = 0, y1 = 0;
+        var iWidth = innerWidth, x = -iWidth, y = 0, x1 = 0, y1 = 0;
         function renderImage() {
             
-            filedContext.drawImage(image, x, y, innerWidth, innerHeight);
-            filedContext.drawImage(image, x1, y1, innerWidth, innerHeight);
+            filedContext.drawImage(image, x, y, iWidth, 400);
+            filedContext.drawImage(image, x1, y1, iWidth, 400);
             
             x += 30
             x1 += 30;
             
-            if (x1 > innerWidth - 70)
-                x1 = -innerWidth;
-            if (x > innerWidth - 70)
-                x = -innerWidth;
+            if (x1 > iWidth - 70)
+                x1 = -iWidth;
+            if (x > iWidth - 70)
+                x = -iWidth;
             
             requestAnimationFrame(renderImage);
         }
@@ -138,5 +138,4 @@
     }
     
     second();
-
 })();
