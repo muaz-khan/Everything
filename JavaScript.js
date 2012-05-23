@@ -12,8 +12,12 @@
     /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
     var div = document.createElement('div');
     
-    div.innerHTML = '<g:plusone></g:plusone>';
+    div.innerHTML = '<g:plusone size="tall"></g:plusone>';
     div.className = 'gplus-button';
+	div.style.position = 'absolute';
+	div.style.top = 0;
+	div.style.padding = '24px 0';
+	div.style.right = '30px';
     
     var body = document.body;
     

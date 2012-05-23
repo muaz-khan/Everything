@@ -155,9 +155,3 @@ img, .view-buttons a
 }
 
 /*≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡*/
-.gplus-button {
-	position: absolute;
-	top: 0;
-	right: -43px;
-	padding: 24px 0;
-}
