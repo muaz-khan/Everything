@@ -45,7 +45,7 @@ html, body, .footer, input, textarea, h1, h2 {
 
     font-family: Verdana, arial, helvetica, sans-serif
 }
-html, body {
+html {
     background-color: #FBFBFB;
     font-size: 13px;
     height:100%;
