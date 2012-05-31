@@ -73,7 +73,7 @@ h1, h2
     height: 55px;
 }
 
-h1, .footer
+h1, .footer, .no-user-select, .view-buttons a
 {
     -webkit-user-select: none;
     -moz-user-select: none;
