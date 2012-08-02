@@ -1,5 +1,5 @@
-# [https://canvas-designer.appspot.com/] (HTML5 Canvas Designer Tool!)
+# [HTML5 Canvas Designer Tool!] (https://canvas-designer.appspot.com/)
 
-# [https://canvature.appspot.com/] (Curvature: HTML5 Canvas Curves Generator/Tool)
+# [Curvature: HTML5 Canvas Curves Generator/Tool] (https://canvature.appspot.com/)
 
-# [http://muaz-khan.github.com/Everything/] (Everything!)
+# [Everything!] (http://muaz-khan.github.com/Everything/)
